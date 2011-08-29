@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Backbone.js Filter List Example</title>
+	</head>
+	<body>
+		<div id="mainContainer">	
+			<div id="contentContainer"></div>
+		</div>	
+		<script>
+			var myapp = {
+				model:{},
+				view:{},
+				collection:{},
+				router:{}
+			}
+		</script>
+		
+		<script id="list_container_tpl" type="text/template">
+		<div class="grid_5 listContainer">
+			<div class="box">
+				<h2 class="box_head grad_colour">Your tasks</h2>
+					<div class="sorting">Show: <select id="taskSorting"><option value="0">All Current</option><option value="1">Completed</option></select>
+						<input class="search round_all" id="searchTask" type="text" value="">
+					</div>
+					<div class="block">
+					<ul id="taskList" class="list"></ul>
+				</div>
+			</div>
+		</div>
+		</script>
+
+
+		<script id="task_item_tpl" type="text/template">
+			<li class="task">
+				<h4 class="name searchItem"><%= name %></h4>
+			</li>
+		</script>	
+		
+		
+		<script type="text/javascript" src="libs/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="libs/underscore-min.js"></script>
+		<script type="text/javascript" src="libs/backbone.js"></script>		
+		
+		<script type="text/javascript" src="js/model.tasks.js"></script>
+		<script type="text/javascript" src="js/collection.tasks.js"></script>
+		<script type="text/javascript" src="js/views/view.tasksContainer.js"></script>
+		<script type="text/javascript" src="js/views/view.tasksItem.js"></script>
+		<script type="text/javascript" src="js/router.tasks.js"></script>	
+		
+<script>
+	Backbone.history.start();
+</script>
+	</body>
+</html>
+    
+	
+
